@@ -1,0 +1,58 @@
+{
+  "steps": [
+    {
+      "title": "步骤 1：git init —— 初始化仓库",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git init",
+      "output": "Initialized empty Git repository in C:/Users/15402/Desktop/1/.git/\nPS C:\\Users\\15402\\Desktop\\1> git branch -M main",
+      "highlight": "git init + git branch -M main"
+    },
+    {
+      "title": "步骤 2：git add —— 暂存项目文件",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git add .",
+      "output": "warning: LF will be replaced by CRLF\nwarning: LF will be replaced by CRLF\n...（18 个文件）\nPS C:\\Users\\15402\\Desktop\\1> git status",
+      "highlight": ".gitignore 排除了 node_modules / .next / docx / images"
+    },
+    {
+      "title": "步骤 3：git status —— 工作区清单",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git status",
+      "output": "On branch main\nChanges to be committed:\n  new file:   .gitignore\n  new file:   AGENTS.md\n  new file:   app/globals.css\n  new file:   app/layout.tsx\n  new file:   app/page.tsx\n  new file:   components/LoginForm.tsx\n  new file:   lib/validators.ts\n  new file:   next-env.d.ts\n  new file:   next.config.js\n  new file:   package-lock.json\n  new file:   package.json\n  new file:   tests/LoginForm.test.tsx\n  new file:   tests/validators.test.ts\n  new file:   tsconfig.json\n  new file:   vitest.config.ts\n  new file:   vitest.setup.ts\n  new file:   项目构想总需求.md",
+      "highlight": "17 个项目源文件已暂存（node_modules / .next / docx / gen_report.js 被 .gitignore 排除）"
+    },
+    {
+      "title": "步骤 4：git commit —— 主线 main 首次提交",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git commit -m \"feat(frontend): 初始化登录表单前端校验项目骨架\"",
+      "output": "[main (root-commit) 641d45d] feat(frontend): 初始化登录表单前端校验项目骨架\n 17 files changed, 5390 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 AGENTS.md\n create mode 100644 app/globals.css\n create mode 100644 app/layout.tsx\n create mode 100644 app/page.tsx\n create mode 100644 components/LoginForm.tsx\n create mode 100644 lib/validators.ts\n create mode 100644 next-env.d.ts\n create mode 100644 next.config.js\n create mode 100644 package-lock.json\n create mode 100644 package.json\n create mode 100644 tests/LoginForm.test.tsx\n create mode 100644 tests/validators.test.ts\n create mode 100644 tsconfig.json\n create mode 100644 vitest.config.ts\n create mode 100644 vitest.setup.ts\n create mode 100644 项目构想总需求.md",
+      "highlight": "commit hash: 641d45d · 符合 AGENTS.md 规范：feat(frontend): 中文摘要"
+    },
+    {
+      "title": "步骤 5：git log —— 主线提交历史",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git log --oneline --graph --decorate",
+      "output": "* 641d45d (HEAD -> main) feat(frontend): 初始化登录表单前端校验项目骨架",
+      "highlight": "当前在 main 分支，只有 1 条 commit，准备开功能分支"
+    },
+    {
+      "title": "步骤 6：git checkout -b —— 从 main 开功能分支",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git checkout -b feat/add-remember-me",
+      "output": "Switched to a new branch 'feat/add-remember-me'\n\nPS C:\\Users\\15402\\Desktop\\1> git branch\n  main\n* feat/add-remember-me",
+      "highlight": "功能分支命名：feat/xxx · 遵守 AGENTS.md Git 规范"
+    },
+    {
+      "title": "步骤 7：git diff main...HEAD —— 功能分支改动内容",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git diff main...HEAD --stat",
+      "output": " components/LoginForm.tsx | 33 ++++++++++++++++++++++++++++++++- \n 1 file changed, 32 insertions(+), 1 deletion(-)",
+      "highlight": "改动：新增 \"记住我\" 复选框 + localStorage 持久化"
+    },
+    {
+      "title": "步骤 8：git commit —— 功能分支提交",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git commit -m \"feat(frontend): 新增登录表单记住我功能，localStorage 持久化用户名\"",
+      "output": "[feat/add-remember-me ca7e9c4] feat(frontend): 新增登录表单记住我功能，localStorage 持久化用户名\n 1 file changed, 32 insertions(+), 1 deletion(-)",
+      "highlight": "commit hash: ca7e9c4 · 22 个单元测试全部通过后才提交"
+    },
+    {
+      "title": "步骤 9：git log --all —— 最终分支结构图",
+      "prompt": "PS C:\\Users\\15402\\Desktop\\1> git log --oneline --graph --all --decorate",
+      "output": "* ca7e9c4 (HEAD -> feat/add-remember-me) feat(frontend): 新增登录表单记住我功能\n|\n* 641d45d (main) feat(frontend): 初始化登录表单前端校验项目骨架",
+      "highlight": "两条分支清晰：main 只有骨架，feat 分支独有记住我功能"
+    }
+  ]
+}
