@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env
+.env.local
+*.docx
+gen_report.js
+images/
+artifacts/
+.DS_Store
+Thumbs.db
+.trae/
+.vscode/
