@@ -28,6 +28,7 @@ export default function LoginForm() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
   const [showPwd, setShowPwd] = useState(false);
+  const [remember, setRemember] = useState(false);
   const [success, setSuccess] = useState(false);
 
   // 模拟一个固定验证码（实际应由后端生成 + 图片）
